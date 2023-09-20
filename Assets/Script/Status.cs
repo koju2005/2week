@@ -1,18 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class Status : MonoBehaviour
+[CreateAssetMenu(fileName = "Status", menuName = "Scriptable Object/Status", order = int.MaxValue)]
+public class Status : ScriptableObject
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    [Header("PlayerStatus")]
+    public int ATK;
+    public int DEF;
+    public int HP;
+    public int CRI;
+    public int MONEY;
 }
