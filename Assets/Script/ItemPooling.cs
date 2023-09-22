@@ -33,7 +33,7 @@ public class ItemPooling : MonoBehaviour
         foreach (var resource in resources)
         {
 
-            Vector3 spawnvcetor = new Vector3(xOffset * 60, yOffset * -30, 0);
+            Vector3 spawnvcetor = new Vector3(xOffset * 60, yOffset * -70, 0);
 
             _prefabData.Add(resource.name, resource);
 
@@ -47,6 +47,7 @@ public class ItemPooling : MonoBehaviour
             xOffset++;
             if(xOffset % 3 == 0)
             {
+                xOffset = 0;
                 yOffset++;
             }
         }
