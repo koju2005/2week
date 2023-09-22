@@ -28,7 +28,6 @@ public class Item : MonoBehaviour
     private void Start()
     {
         player = GameManager.instance.Player;
-       // sprite.GetComponent<Image>().sprite = itemSO.Sprite;
         ItemStat();
     }
 

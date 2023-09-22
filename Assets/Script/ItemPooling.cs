@@ -27,20 +27,28 @@ public class ItemPooling : MonoBehaviour
             _prefabSO.Add(resource);
         }
         int i = 0;
+        int xOffset = 0;
+        int yOffset = 0;
+
         foreach (var resource in resources)
         {
 
-          
+            Vector3 spawnvcetor = new Vector3(xOffset * 60, yOffset * -30, 0);
+
             _prefabData.Add(resource.name, resource);
 
             GameObject newPrefabInstance;
             resource.GetComponent<Item>().itemSO = _prefabSO[i];
             resource.GetComponentInChildren<Image>().sprite=_prefabSO[i].Sprite;
-            newPrefabInstance = Instantiate(resource, spawnLocation.position, spawnLocation.rotation);
+            newPrefabInstance = Instantiate(resource, spawnLocation.position+ spawnvcetor, spawnLocation.rotation);
             newPrefabInstance.transform.SetParent(spawnLocation);
-
-            Debug.Log(resource.name);
+            
             i++;
+            xOffset++;
+            if(xOffset % 3 == 0)
+            {
+                yOffset++;
+            }
         }
 
     }
